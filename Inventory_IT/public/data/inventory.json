@@ -1,0 +1,83 @@
+{
+	"home": [{
+			"itemName": "TV",
+            "itemDesc": "32 inch",
+            "itemValue": "125.99",
+			"itemPic": "tv.png"
+		},
+		{
+			"itemName": "Radio",
+            "itemDesc": "Home Audio",
+            "itemValue": "58.95",
+			"itemPic": "radio.png"
+		},
+		{
+			"itemName": "Ring",
+            "itemDesc": "Bling",
+            "itemValue": "7,525",
+			"itemPic": "ring.png"
+		},
+		{
+			"itemName": "Computer",
+            "itemDesc": "Mac",
+            "itemValue": "2,750",
+			"itemPic": "computer.png"
+		},
+		{
+			"itemName": "Books",
+            "itemDesc": "Signed copies collection",
+            "itemValue": "3,500",
+			"itemPic": "books.png"
+		}
+	],
+	"auto": [{
+			"itemName": "Rims",
+			"itemDesc": "Mag Wheels",
+			"itemValue": "2,575",
+			"itemPic": "rims.png"
+		},
+		{
+			"itemName": "Stereo",
+			"itemDesc": "Car stereo",
+			"itemValue": "1,000",
+			"itemPic": "stereo.png"
+		},
+		{
+			"itemName": "CD",
+			"itemDesc": "CD collection",
+			"itemValue": "225",
+			"itemPic": "cd.png"
+		}
+	],
+	"business": [{
+			"itemName": "Laptop",
+			"itemDesc": "Lorem Ipsum",
+			"itemValue": "123",
+			"itemPic": "laptop.png"
+		},
+		{
+			"itemName": "Phone",
+			"itemDesc": "Lorem Ipsum",
+			"itemValue": "123",
+			"itemPic": "phone.png"
+		},
+		{
+			"itemName": "Printer",
+			"itemDesc": "Lorem Ipsum",
+			"itemValue": "123",
+			"itemPic": "printer.png"
+		},
+		{
+			"itemName": "Scanner",
+			"itemDesc": "Lorem Ipsum",
+			"itemValue": "123",
+			"itemPic": "scanner.png"
+		},
+		{
+			"itemName": "Server",
+			"itemDesc": "Lorem Ipsum",
+			"itemValue": "123",
+			"itemPic": "server.png"
+		}
+	]
+}

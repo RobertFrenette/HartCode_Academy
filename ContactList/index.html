@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      Validated at: https://validator.w3.org/nu/ 
+      JSFiddle: https://jsfiddle.net/aq9Laaew/44171/
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Contacts</title>
+    <!-- Include external Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+                           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+                           crossorigin="anonymous" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+    <body>
+      <!-- Nav -->
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Contacts</a>
+      </nav>
+ 
+      <!-- Input Form -->
+      <main class="container">
+        <div id="inputFormDiv">
+          <h1>Add A Contact</h1>
+ 
+          <form id="contactForm">
+            <!-- Input fields -->
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" autofocus />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" />
+            </div>
+            <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <input type="email" class="form-control" id="emailAddress" placeholder="Enter Email Address" />
+            </div>
+           
+            <!-- Form buttons -->
+            <button type="button" class="btn btn-primary"          id="submitBtn">Submit</button>
+            <button type="reset"  class="btn btn-secondary"        id="resetBtn">Clear</button>
+            <button type="button" class="btn btn-primary hidden"   id="editBtn">Edit</button>
+            <button type="button" class="btn btn-secondary hidden" id="cancelBtn">Cancel</button>
+           
+            <!-- Dynamic Error messages -->
+            <p>
+              <br /><span id="msg">&nbsp;</span>
+            </p>
+          </form>
+ 
+          <hr />
+        </div>
+      </main>
+ 
+      <!-- Output / Display -->
+      <div class="container">
+        <div id="contactsDiv">
+          <h2>Contacts</h2>
+ 
+          <!-- UL to hold dynamically genereated LI DOM Elements -->
+          <ul class="list-group" id="contactsList"></ul>
+        </div>
+      </div>
+ 
+      <!-- footer -->
+      <footer class="footer">
+        <div class="container">
+          <span class="text-muted">&copy; 2018</span>
+        </div>
+      </footer>
+ 
+      <!-- Include external Scripts -->
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+              integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+              crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+              integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+              crossorigin="anonymous"></script>
+ 
+      <!-- Include custom Scripts -->
+      <script src="js/contact.js"></script> <!-- required by scripts.js -->
+      <script src="js/scripts.js"></script>
+    </body>
+</html>

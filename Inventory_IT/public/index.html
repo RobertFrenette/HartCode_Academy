@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+        <title>Inventory IT</title>
+
+        <!-- Include external Styles -->
+        <link rel="stylesheet" 
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+              integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+              crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
+              integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+              crossorigin="anonymous" />
+
+        <!-- Include custom CSS -->
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#" id="rootLink"><img src="img/logo_sm.png" alt="Inventory IT" />Inventory IT</a>
+        </nav>
+
+        <!-- Splash page view -->
+        <div id="mainSplash">
+            <!-- Splash page jumbotron -->
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 class="display-3">Inventory IT</h1>
+                    <p>
+                        <img src="img/logo.png" alt="Inventory IT Logo" class="logo" /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam convallis bibendum pharetra. Sed justo
+                        sapien, scelerisque ut cursus ut, semper ac eros. Quisque sed viverra ipsum. Sed sed mattis nunc. Etiam
+                        convallis dignissim ipsum, eu imperdiet urna malesuada eu. Vestibulum ante ipsum primis in faucibus orci
+                        luctus et ultrices posuere cubilia Curae; Aliquam scelerisque, massa a cursus volutpat, eros ex dignissim
+                        sem, ac eleifend tellus dui sed dui.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Splash page content -->
+            <div class="container marketing">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img class="rounded-circle" src="img/home.png" alt="Manage Home Invenroty" id="homeLogo" />
+                        <h2>Home</h2>
+                        <p>
+                            Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+                        </p>
+                        <p><a class="btn btn-info" href="#" role="button" id="homeBtn"><i class="fas fa-pencil-alt"></i> Manage Home Inventory</a></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="rounded-circle" src="img/auto.png" alt="Manage Auto Invenroty" id="autoLogo" />
+                        <h2>Auto</h2>
+                        <p>
+                            Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+                        </p>
+                        <p><a class="btn btn-info" href="#" role="button" id="autoBtn"><i class="fas fa-pencil-alt"></i> Manage Vehicle Inventory</a></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="rounded-circle" src="img/business.png" alt="Manage Business Invenroty" id="businessLogo" />
+                        <h2>Business</h2>
+                        <p>
+                            Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+                        </p>
+                        <p><a class="btn btn-info" href="#" role="button" id="businessBtn"><i class="fas fa-pencil-alt"></i> Manage Business Inventory</a></p>
+                    </div>
+                </div>
+                <hr />
+            </div>
+        </div>
+
+        <!-- Inventory view for user-selected type (home, auto, business) -->
+        <div class="hidden" id="mainInventory">
+            <!-- Inventory view jumbotron -->
+            <div class="jumbotron">
+                <div class="container">
+                    <img src="img/logo.png" alt="Inventory Type" id="inventoryTypeLogo" class="logo" />
+                    <h1 class="display-3" id="inventoryType">&nbsp;</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+
+            <!-- Inventory Details -->
+            <div class="container marketing">
+                <div class="row">
+                    <!-- Left cols -->
+                    <div class="col-lg-4">
+                        <h4>Items (<span  id="itemCount">&nbsp;</span>)</h4>
+                        <div id="inventoryItemsList">
+                            <!-- Dynamically Populated -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">&nbsp;</div>
+
+                    <!-- Right Cols -->
+                    <div class="col-lg-4">
+                        <h4><span>Add Item</span></h4>
+                        <div id="addFormDiv">
+                            <form id="addForm">
+                                    <div class="form-group">
+                                        <label for="addItemName">Item Name</label>
+                                        <input type="text" class="form-control" id="addItemName" placeholder="Enter Item Name" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="addItemDesc">Description</label>
+                                        <input type="text" class="form-control" id="addItemDesc" placeholder="Enter Item Description" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="addItemValue">$ Value</label>
+                                        <input type="text" class="form-control" id="addItemValue" placeholder="Enter Item Value" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="addItemPic">Pic (in <span id="imgPath">&nbsp;</span> folder)</label>
+                                        <input type="text" class="form-control" id="addItemPic" placeholder="Enter Item image filename" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="reset" class="btn btn-secondary" id="addItemResetBtn">Reset</button>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="container"><p>&copy; Inventory IT 2018</p></footer>
+
+        <!-- Edit Item Modal -->
+        <div class="modal fade" id="editModel" tabindex="-1" role="dialog" aria-labelledby="editModelLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModelLabel">Edit: <span id="editItemName">&nbsp;</span></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <div class="form-group"><img id="editItemImg" src="img/logo_sm.png" alt="ItemImage" /></div>
+                            <div class="form-group">
+                                <label for="itemName">Item Name</label>
+                                <input type="text" class="form-control" id="itemName" placeholder="Enter Item Name" disabled />
+                            </div>
+                            <div class="form-group">
+                                <label for="itemDesc">Description</label>
+                                <input type="text" class="form-control" id="itemDesc" placeholder="Enter Item Description" />
+                            </div>
+                            <div class="form-group">
+                                <label for="itemValue">$ Value</label>
+                                <input type="text" class="form-control" id="itemValue" placeholder="Enter Item Value" />
+                            </div>
+                            <div class="form-group">
+                                <label for="itemPic">Pic</label>
+                                <input type="text" class="form-control" id="itemPic" placeholder="Enter Item image filename" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeModalBtn">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveModalBtn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Include external Scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" 
+                integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+                crossorigin="anonymous"></script>
+
+        <!-- Include custom Scripts -->
+        <script src="js/item.js"></script>      <!-- required by inventory.js -->
+        <script src="js/inventory.js"></script> <!-- required by scripts.js -->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

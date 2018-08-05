@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <title>Whack-a-Stack</title>
+
+    <!-- Include external Styles -->
+    <link rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+          crossorigin="anonymous" />
+    <link rel="stylesheet" 
+          href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" 
+          crossorigin="anonymous" />
+
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo_sm.png" alt="Whack-a-Stack" />
+        <span id="rootLink">Whack-a-Stack</span>
+      </a>
+    </nav>
+
+    <div>
+      <div class="jumbotron">
+        <!-- Intro Content -->
+        <div class="container" id="intro">
+          <img src="img/logo.png" alt="Whack-a-Mole Logo" id="logo" />
+          <h1>Whack-a-Stack features the MEAN Stack <span class="sup">*</span>:</h1>
+          <ul>
+            <li>
+              <a href="https://www.mongodb.com/" target="new">
+                <i class="fas fa-external-link-alt"></i> mongoDB</a>
+                stores data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be
+                changed over time. The document model maps to the objects in your application code, making data easy to work
+                with.
+            </li>
+            <li>
+              <a href="https://expressjs.com/" target="new">
+                <i class="fas fa-external-link-alt"></i> Express.js</a>, 
+                or simply Express, is a web application framework for Node.js. It is designed for building
+                web applications and APIs, and has been called the de facto standard server framework for Node.js.
+            </li>
+            <li>
+              <a href="https://angular.io/" target="new">
+                <i class="fas fa-external-link-alt"></i> Angular</a>
+                (commonly referred to as "Angular 2+" or "Angular v2 and above") is a TypeScript-based open-source front-end web application
+                platform led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete
+                rewrite from the same team that built AngularJS.
+            </li>
+            <li>
+              <a href="https://nodejs.org/" target="new">
+                <i class="fas fa-external-link-alt"></i> Node.js</a>
+                is an open-source, cross-platform JavaScript run-time environment, built on Chrome's V8 JavaScript engine, that executes
+                JavaScript code outside the browser.
+            </li>
+          </ul>
+          <div class="gameControls">
+              <a class="btn btn-info" href="#" role="button" id="playBtn">Play <i class="far fa-play-circle"></i></a>
+          </div>
+          <div class="text-right">
+              <span class="sup">*</span> <span id="disclaimer">Game implemented in front-end tech only.</span>
+          </div>
+        </div>
+
+        <!-- Game Container -->
+        <div class="container marketing hidden" id="gameBoardContainer">
+          <!-- Game Board - Dynamically built -->
+          <div id="gameBoard"></div>
+          <div class="gameControls">
+            <div  id="scoreDiv">Score: <span id="score">0</span></div>
+            <div>
+                <a class="btn btn-info" href="#" role="button" id="startBtn">Start <i class="far fa-play-circle"></i></a>
+                <a class="btn btn-info" href="#" role="button" id="cancelBtn">Cancel <i class="far fa-times-circle"></i></a>
+                <a class="btn btn-info hidden" href="#" role="button" id="resetBtn">Reset <i class="far fa-play-circle"></i></a>
+                <a class="btn btn-info hidden" href="#" role="button" id="exitBtn">Exit <i class="far fa-times-circle"></i></a>
+            </div>
+            <!-- Difficulty -->
+            <div id="difficultyDiv">
+              <form id="formDifficulty">
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optDifficulty" id="optDifficultyEasy" value="easy" checked />Easy
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optDifficulty" id="optDifficultyMedium" value="medium" />Medium
+                  </label>
+                </div>
+                <div class="form-check-inline disabled">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optDifficulty" id="optDifficultyHard" value="hard" />Hard
+                  </label>
+                </div>
+              </form>
+            </div>
+            <!-- Timer -->
+            <div id="timeDiv">Time: <span id="time">60</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container">
+      <p>&copy; Whack-a-Stack 2018</p>
+    </footer>
+
+    <!-- Include external Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" 
+            integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" 
+            crossorigin="anonymous"></script>
+
+    <!-- Include custom Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

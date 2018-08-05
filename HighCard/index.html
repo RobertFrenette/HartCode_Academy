@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+        <title>High Card</title>
+
+        <!-- Include external Styles -->
+        <link rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+            integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+            crossorigin="anonymous" />
+
+        <!-- Include custom CSS -->
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <!-- Nav -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">High Card</a>
+        </nav>
+
+        <!-- Player Content -->
+        <div class="container">
+            <div class="card-deck mb-3 text-center">
+                <!-- Player One -->
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">
+                            <span id="playerOneNameText">Player</span>
+                            <span id="playerOneScore" class="count"></span>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="playerOneForm">
+                            <!-- Input fields -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="playerOneName" placeholder="Enter Name" required autofocus />
+                            </div>
+                            <!-- Form buttons -->
+                            <button type="submit" class="btn btn-primary">Join Game</button>
+                        </form>
+                        <div id="playerOneCardDiv" class="hidden"></div>
+                        <br />
+                        <button type="button" class="btn btn-secondary hidden" id="playerOneLeave">Leave Game</button>
+                    </div>
+                </div>
+                <!-- Player Two -->
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">
+                            <span id="playerTwoNameText">Player</span>
+                            <span id="playerTwoScore" class="count"></span>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="playerTwoForm">
+                            <!-- Input fields -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="playerTwoName" placeholder="Enter Name" required />
+                            </div>
+                            <!-- Form buttons -->
+                            <button type="submit" class="btn btn-primary">Join Game</button>
+                        </form>
+                        <div id="playerTwoCardDiv" class="hidden"></div>
+                        <br />
+                        <button type="button" class="btn btn-secondary hidden" id="playerTwoLeave">Leave Game</button>
+                    </div>
+                </div>
+                <!-- Player Three -->
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">
+                            <span id="playerThreeNameText">Player</span>
+                            <span id="playerThreeScore" class="count"></span>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="playerThreeForm">
+                            <!-- Input fields -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="playerThreeName" placeholder="Enter Name" required />
+                            </div>
+                            <!-- Form buttons -->
+                            <button type="submit" class="btn btn-primary">Join Game</button>
+                        </form>
+                        <div id="playerThreeCardDiv" class="hidden"></div>
+                        <br />
+                        <button type="button" class="btn btn-secondary hidden" id="playerThreeLeave">Leave Game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dealer Content -->
+        <div class="container">
+            <div class="card-deck mb-3 text-center">
+                <!-- Deck of Cards -->
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Deck
+                            <span id="cardsRemaining" class="count"></span>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/card_back.png" alt="card" />
+                        <br />
+                        <button type="button" class="btn btn-success hidden" id="dealerBtn">Deal Cards</button>
+                        <button type="button" class="btn btn-primary hidden" id="newGameBtn">New Game</button>
+                    </div>
+                    <!-- Face Cards Key -->
+                    <div class="container key">
+                        <span class="small-card">Jack: &#9821;</span>
+                        <span class="small-card">Queen: &#9819;</span>
+                        <span class="small-card">King: &#9818;</span>
+                        <span class="small-card">Ace: A</span>
+                    </div>
+                </div>
+                <!-- Discarded Cards -->
+                <div class="card mb-4 box-shadow wide">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Discarded
+                            <span id="cardsDiscarded" class="count"></span>
+                        </h4>
+                    </div>
+                    <div class="card-body" id="discardedCardsDiv"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Success message -->
+        <div class="container">
+            <div class="alert alert-success hidden" role="alert" id="successMsg"></div>
+        </div>    
+
+        <!-- Dynamic Error message -->
+        <div class="container">
+            <div class="alert alert-danger hidden" role="alert" id="errMsg"></div>
+        </div>
+
+
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <span class="text-muted">&copy; 2018</span>
+            </div>
+        </footer>
+
+        <!-- Include external Scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" 
+                integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+                crossorigin="anonymous"></script>
+
+        <!-- Include custom Scripts -->
+        <script src="js/card.js"></script>   <!-- required by deck.js -->
+        <script src="js/deck.js"></script>   <!-- required by scrips.js -->
+        <script src="js/player.js"></script> <!-- required by scrips.js -->
+        <script src="js/view.js"></script>   <!-- required by scrips.js -->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

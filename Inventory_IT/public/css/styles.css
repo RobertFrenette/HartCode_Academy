@@ -1,0 +1,66 @@
+/* Styles for index.html */
+
+body {
+    padding-top: 3.5rem;
+}
+footer {
+    text-align: right;
+}
+
+/* Float logo so text wraps around / under it */
+.logo {
+    float: left;
+}
+
+#homeLogo, #autoLogo, #businessLogo {
+    cursor: pointer;
+}
+
+/* Inventory type text */
+.inventoryTypeHome, .inventoryTypeAuto {
+    padding-top: 20px;
+}
+.inventoryTypeBusiness {
+    padding-top: 10px;
+}
+/* Decrease Edit/Delete button size */
+.item-action {
+    font-size: .65em;
+}
+
+#addFormDiv {
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+/* BootStrap Styles */
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: 400;
+}
+.marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+}
+.rounded-circle {
+    width: 140px;
+    height: 140px;
+    background-color: #E9ECEF;
+}
+.card-body {
+    text-align: left;
+}
+.card-img-top {
+    float: left;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 64px;
+    height: 64px;
+}
