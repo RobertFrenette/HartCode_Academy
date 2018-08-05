@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Low Card</title>
+
+        <!-- Include custom CSS -->
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <h1>Low Card</h1>
+        <hr />
+
+        <!-- Player Registration -->
+        <h2>Register</h2>
+        <div>
+            <form id="playerOneForm">
+                <label for="playerOneName">PlayerOne</label>
+                <input type="text" id="playerOneName" autofocus />
+                <input type="submit" id="playerOneFormSubmitBtn" value="Join Game" />
+            </form>
+            <form id="playerTwoForm">
+                <label for="playerTwoName">PlayerTwo</label>
+                <input type="text" id="playerTwoName" />
+                <input type="submit" id="playerTwoFormSubmitBtn" value="Join Game" />
+            </form>
+            <form id="playerThreeForm">
+                <label for="playerThreeName">PlayerThree</label>
+                <input type="text" id="playerThreeName" />
+                <input type="submit" id="playerThreeFormSubmitBtn" value="Join Game" />
+            </form>
+        </div>
+        <hr />
+
+        <!-- Players -->
+        <div id="players" class="hidden">
+            <h2>Players</h2>
+            <div>
+                <h3 id="playerOneHeader" class="hidden">
+                    <span id="playerOneDisplayName">&nbsp;</span>
+                    <span id="playerOneDisplayScore">&nbsp;</span>
+                    <br /><span id="playerOneCard">_</span>
+                </h3>
+                <h3 id="playerTwoHeader" class="hidden">
+                    <span id="playerTwoDisplayName">&nbsp;</span>
+                    <span id="playerTwoDisplayScore">&nbsp;</span>
+                    <br /><span id="playerTwoCard">_</span>
+                </h3>
+                <h3 id="playerThreeHeader" class="hidden">
+                    <span id="playerThreeDisplayName">&nbsp;</span>
+                    <span id="playerThreeDisplayScore">&nbsp;</span>
+                    <br /><span id="playerThreeCard">_</span>
+                </h3>
+            </div>
+            <hr />
+        </div>
+
+        <!-- Dealer -->
+        <div id="dealer" class="hidden">
+            <h2>Dealer</h2>
+            <div>
+                <button id="dealButton">Deal</button>
+                <button id="resetButton" class="hidden">Reset</button>
+                <div>
+                    <p>
+                        Cards in Deck: <span id="cardsInDeck">0</span> 
+                        <br />Cards Discarded: <span id="cardsDiscarded">0</span>
+                    </p>
+                </div>
+            </div>
+            <hr />
+        </div>
+
+        <!-- Include external Scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>        
+
+        <!-- Include custom Scripts -->
+        <script src="js/card.js"></script>   <!-- required by deck.js -->
+        <script src="js/deck.js"></script>   <!-- required by scripts.js -->
+        <script src="js/player.js"></script> <!-- required by scripts.js -->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
